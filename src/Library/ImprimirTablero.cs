@@ -10,8 +10,8 @@ namespace PII_Game_Of_Life
         {
             
             bool[,] b = table; //variable que representa el tablero
-            int width = 20; //variabe que representa el ancho del tablero
-            int height = 20; //variabe que representa altura del tablero
+            int width = table.GetLength(0); //variabe que representa el ancho del tablero
+            int height = table.GetLength(1); //variabe que representa altura del tablero
             while (true)
             {
                 Console.Clear();

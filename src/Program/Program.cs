@@ -10,7 +10,7 @@ namespace PII_Game_Of_Life
             LogicaJuego juego1 = new LogicaJuego();
             juego1.GenerarTablero();
             ImprimirTablero a = new ImprimirTablero();
-            a.Imprimir(juego1.Juego());
+            a.Imprimir(juego1.Juego(juego1.Tablero));
             
             
         }

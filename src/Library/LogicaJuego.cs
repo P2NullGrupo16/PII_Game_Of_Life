@@ -22,16 +22,23 @@ namespace PII_Game_Of_Life
                     }
                 }
             }
+            this.Tablero = board;
             return board;
         }
+        public bool[,] Tablero {get;set;} 
         
-        public bool[,] Juego()
+        public bool[,] Juego(bool[,] table1)
         {
-            bool[,] gameBoard = this.GenerarTablero();
+            
+            while (true)
+            {
+
+            bool[,] gameBoard = table1;
             int boardWidth = gameBoard.GetLength(0);
             int boardHeight = gameBoard.GetLength(1);
 
             bool[,] cloneboard = new bool[boardWidth, boardHeight];
+            
             for (int x = 0; x < boardWidth; x++)
             {
                 for (int y = 0; y < boardHeight; y++)
@@ -73,9 +80,12 @@ namespace PII_Game_Of_Life
                     }
                 }
             }
+            this.Tablero = gameBoard;
             gameBoard = cloneboard;
             cloneboard = new bool[boardWidth, boardHeight];
+            
             return gameBoard;
+            }
         }
 
     }
