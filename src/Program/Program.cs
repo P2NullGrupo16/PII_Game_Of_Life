@@ -7,10 +7,11 @@ namespace PII_Game_Of_Life
     {
         static void Main(string[] args)
         {
-            LogicaJuego juego1 = new LogicaJuego();
-            juego1.GenerarTablero();
+            //LogicaJuego juego1 = new LogicaJuego();
+            //juego1.GenerarTablero();
             ImprimirTablero a = new ImprimirTablero();
-            a.Imprimir(juego1.Juego(juego1.Tablero));
+            
+            a.Imprimir();
             
             
         }

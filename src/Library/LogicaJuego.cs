@@ -26,13 +26,14 @@ namespace PII_Game_Of_Life
             return board;
         }
         public bool[,] Tablero {get;set;} 
+
         
-        public bool[,] Juego(bool[,] table1)
+        public bool[,] Juego()
         {
-            
+            bool[,] table1 = this.Tablero;
             while (true)
             {
-
+            
             bool[,] gameBoard = table1;
             int boardWidth = gameBoard.GetLength(0);
             int boardHeight = gameBoard.GetLength(1);
@@ -80,8 +81,8 @@ namespace PII_Game_Of_Life
                     }
                 }
             }
+            gameBoard = cloneboard; 
             this.Tablero = gameBoard;
-            gameBoard = cloneboard;
             cloneboard = new bool[boardWidth, boardHeight];
             
             return gameBoard;
