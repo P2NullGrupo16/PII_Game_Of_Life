@@ -6,21 +6,20 @@ namespace PII_Game_Of_Life
 {
     public class ImprimirTablero
     {
-        public static void imprimir(Logic juego, TransformadorArchivo TableroA)
+        public static void imprimir(Logic jugada, bool[,] TableroA) 
         {
-            //bool[,] b //variable que representa el tablero
-            int width = 20; //variabe que representa el ancho del tablero
-            int height = 20;//variabe que representa altura del tablero
+            bool[,] juego = jugada.Jugar(TableroA);
             while (true)
             {
-            bool[,] jue = juego.jugar(TableroA);
+            int width = juego.GetLength(0); //variabe que representa el ancho del tablero
+            int height = juego.GetLength(1);//variabe que representa altura del tablero
             Console.Clear();
             StringBuilder s = new StringBuilder();
             for (int y = 0; y<height;y++)
             {
                 for (int x = 0; x<width; x++)
                 {
-                    if(jue[x,y])
+                    if(juego[x,y])
                     {
                         s.Append("|X|");
                     }
@@ -32,10 +31,10 @@ namespace PII_Game_Of_Life
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
-            //juego = juego.jugar(Tablero.Tablero);
             //=================================================
             //Invocar método para calcular siguiente generación
             //=================================================
+            juego = jugada.Jugar(juego);
             Thread.Sleep(300);
             }
         }

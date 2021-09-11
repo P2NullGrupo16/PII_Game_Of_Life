@@ -7,7 +7,7 @@ namespace PII_Game_Of_Life
     {
         public bool[,] Tablero {get; set;}
 
-        public TransformadorArchivo(string Url)
+        public bool[,] Archivo(string Url)
         {
             string url = Url;
             string content = File.ReadAllText(url);
@@ -24,6 +24,7 @@ namespace PII_Game_Of_Life
                 }
             }
             this.Tablero = board;
+            return Tablero;
         }
     }
 }
